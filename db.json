@@ -1,0 +1,12 @@
+{
+  "user": [
+    {
+      "firstname": "Lucas",
+      "lastname": "Bardoux",
+      "phone": "017688888888",
+      "mail": "lucas.bardoux@example"
+    }
+  ],
+  "roles": [{ "name": "admin" }, { "name": "guest" }],
+  "rights": [{ "name": "read" }, { "name": "write" }]
+}
