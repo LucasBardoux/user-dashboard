@@ -1,0 +1,12 @@
+@import "~vue-material/dist/theme/engine"; // Import the theme engine
+
+@include md-register-theme("default", (
+  primary: #ffd203, // The primary color of your brand
+  accent: #693c0c // The secondary color of your brand
+));
+@import "~vue-material/dist/theme/all";
+
+[container] {
+  display:grid;
+  grid-template-columns: 1fr 6fr;
+}

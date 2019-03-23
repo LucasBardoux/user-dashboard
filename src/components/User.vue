@@ -1,5 +1,32 @@
 <template>
-  <div>
+  <div container>
+    <md-card>
+      <md-card-header>
+       <div class="md-title">Nutzer anlegen</div>
+      </md-card-header>
+      <md-card-content>
+        <div inputs-container>
+          <md-field>
+            <label>Vorname</label>
+            <md-input v-model="inputUser.firstname"></md-input>
+          </md-field>
+          <md-field>
+            <label>Nachname</label>
+            <md-input v-model="inputUser.lastname"></md-input>
+          </md-field>
+          <md-field>
+            <label>Telefonnummer</label>
+            <md-input v-model="inputUser.phone"></md-input>
+          </md-field>
+          <md-field>
+            <label>E-Mail</label>
+            <md-input v-model="inputUser.mail"></md-input>
+          </md-field>
+          <md-button class="md-raised md-primary" v-on:click="addUser()" >Nutzer hinzufügen</md-button>
+        </div>
+      </md-card-content>
+    </md-card>
+
     <md-table>
       <md-table-row>
         <md-table-head>Vorname</md-table-head>
@@ -7,7 +34,7 @@
         <md-table-head>Telefonnummer</md-table-head>
         <md-table-head>E-Mail</md-table-head>
       </md-table-row>
-      <md-table-row v-for="user in users" :key="user.id">
+      <md-table-row v-for="(user, index) in usersStore" :key="index">
         <md-table-cell>{{user.firstname}}</md-table-cell>
         <md-table-cell>{{user.lastname}}</md-table-cell>
         <md-table-cell>{{user.phone}}</md-table-cell>
@@ -19,27 +46,32 @@
 
 <script>
 import axios from 'axios'
+import { mapState, mapMutations } from 'vuex'
 
 export default {
   name: 'user',
   data () {
     return {
-      users: null
+      inputUser: {}
     }
   },
   methods: {
-    init () {
-      axios
-        .get(
-          'https://my-json-server.typicode.com/LucasBardoux/user-dashboard/user'
-        )
-        .then(response => {
-          this.users = response.data
-        })
+    ...mapMutations([
+      'ADD_USER'
+    ]),
+    addUser () {
+      this.ADD_USER({
+        firstname: this.inputUser.firstname,
+        lastname: this.inputUser.lastname,
+        phone: this.inputUser.phone,
+        mail: this.inputUser.mail
+      });
     }
   },
-  mounted () {
-    this.init()
+  computed: {
+    ...mapState([
+      'usersStore'
+    ])
   }
 }
 </script>

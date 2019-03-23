@@ -5,14 +5,9 @@ import VueMaterial from 'vue-material'
 import 'vue-material/dist/vue-material.css'
 import App from './App'
 import Routes from './routes'
-import VueRouter from 'vue-router'
+import Store from './store'
 
 Vue.use(VueMaterial)
-Vue.use(VueRouter)
-
-Vue.component('router-link', Vue.options.components.RouterLink)
-Vue.component('router-view', Vue.options.components.RouterView)
-
 Vue.config.productionTip = false
 
 /* eslint-disable no-new */
@@ -20,5 +15,6 @@ new Vue({
   el: '#app',
   components: { App },
   template: '<App/>',
-  router: Routes
+  router: Routes,
+  store: Store
 })
