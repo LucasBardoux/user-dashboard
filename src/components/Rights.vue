@@ -1,12 +1,14 @@
-<template></template>
+<template>
+<div>Rights</div>
+</template>
 
 <script>
 export default {
-  name: "rights",
-  data() {
-    return {};
+  name: 'rights',
+  data () {
+    return {}
   }
-};
+}
 </script>
 
 <!-- Add "scoped" attribute to limit CSS to this component only -->
