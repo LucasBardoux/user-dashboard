@@ -8,6 +8,6 @@
       "mail": "lucas.bardoux@example"
     }
   ],
-  "roles": [{ "id": 1, "name": "admin" }, { "id": 1, "name": "guest" }],
-  "rights": [{ "id": 1, "name": "read" }, { "id": 1, "name": "write" }]
+  "roles": [{ "id": 1, "name": "admin" }, { "id": 2, "name": "guest" }],
+  "rights": [{ "id": 1, "name": "read" }, { "id": 2, "name": "write" }]
 }
