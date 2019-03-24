@@ -23,7 +23,7 @@
             </md-field>
             <p v-for="(role, index) in inputRole.rights" :key="index">{{role.name}}</p>
           </div>
-          <md-button class="md-raised md-primary" v-on:click="addRole()" >Rolle hinzufügen</md-button>
+          <md-button class="md-raised md-accent" v-on:click="addRole()" >Rolle hinzufügen</md-button>
         </div>
       </md-card-content>
     </md-card>
@@ -71,6 +71,10 @@ export default {
         name: this.inputRole.name,
         rights: this.inputRole.rights
       });
+
+      this.inputRole = {
+        rights: []
+      }
     },
     deleteRole(role) {
       this.REMOVE_ROLE(role)

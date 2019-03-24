@@ -10,7 +10,7 @@
             <label>Name</label>
             <md-input v-model="inputRight.name"></md-input>
           </md-field>
-          <md-button class="md-raised md-primary" v-on:click="addRight()">Recht hinzufügen</md-button>
+          <md-button class="md-raised md-accent" v-on:click="addRight()">Recht hinzufügen</md-button>
         </div>
       </md-card-content>
     </md-card>

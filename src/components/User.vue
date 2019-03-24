@@ -35,7 +35,7 @@
             </md-field>
             <p v-for="(role, index) in inputUser.roles" :key="index">{{role.name}}</p>
           </div>
-          <md-button class="md-raised md-primary" v-on:click="addUser()" >Nutzer hinzufügen</md-button>
+          <md-button class="md-raised md-accent" v-on:click="addUser()" >Nutzer hinzufügen</md-button>
         </div>
       </md-card-content>
     </md-card>

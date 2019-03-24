@@ -1,18 +1,19 @@
-@import "~vue-material/dist/theme/engine"; // Import the theme engine
+@import "~vue-material/dist/theme/engine";
 
 @include md-register-theme(
   "default",
   (
     primary: #ffd203,
-    // The primary color of your brand
-      accent: #b8980c // The secondary color of your brand
+    accent: #154594
   )
 );
+
 @import "~vue-material/dist/theme/all";
 
 [container] {
   display: grid;
   grid-template-columns: 300px 10fr;
+  height: 100%
 }
 
 @media (max-width: 500px) {
@@ -22,17 +23,27 @@
   }
 }
 
-
-
 [options] {
   width: 50px;
 }
 
-[inputs-container] .md-primary {
+[inputs-container] .md-accent {
   width: -webkit-fill-available;
   text-align: -webkit-center;
 }
 
 .md-card {
   height: min-content;
+}
+
+[container] .md-card.md-theme-default {
+  height: 100%;
+}
+
+#app {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
 }
