@@ -1,12 +1,38 @@
 @import "~vue-material/dist/theme/engine"; // Import the theme engine
 
-@include md-register-theme("default", (
-  primary: #ffd203, // The primary color of your brand
-  accent: #693c0c // The secondary color of your brand
-));
+@include md-register-theme(
+  "default",
+  (
+    primary: #ffd203,
+    // The primary color of your brand
+      accent: #b8980c // The secondary color of your brand
+  )
+);
 @import "~vue-material/dist/theme/all";
 
 [container] {
-  display:grid;
-  grid-template-columns: 1fr 6fr;
+  display: grid;
+  grid-template-columns: 300px 10fr;
+}
+
+@media (max-width: 500px) {
+  [container] {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+}
+
+
+
+[options] {
+  width: 50px;
+}
+
+[inputs-container] .md-primary {
+  width: -webkit-fill-available;
+  text-align: -webkit-center;
+}
+
+.md-card {
+  height: min-content;
 }
